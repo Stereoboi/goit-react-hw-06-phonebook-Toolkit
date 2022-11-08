@@ -2,7 +2,7 @@ import { Label, Input, Button, FormWrapper } from "./Form.styled";
 import { Formik, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import { useDispatch } from "react-redux";
-import { addContact } from "redux/actions";
+import { addContact } from "redux/contactsSlice";
 export const FormContact = () => {
 
   const initialValues = {

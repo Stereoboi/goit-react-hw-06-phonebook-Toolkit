@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
 import { ContactListItem } from "components/ContListItem/ContactListItem"
 import { List } from "./ContactList.styled"
+import { getContacts, getStatusFilter } from "redux/selectors";
 
 const getVisibleContacts = (contacts, filter) => {
-  if (filter.status === "" ) {
+  if (filter.status === "") {
     // console.log(contacts);
     // console.log(filter);
     return contacts
@@ -18,12 +19,13 @@ const getVisibleContacts = (contacts, filter) => {
 
 export const ContactList = () => {
 
-  const contacts = useSelector(state => state.contacts);
-  
-  const filter = useSelector(state => state.filter);
-
+  const contacts = useSelector(getContacts);
+  console.log(contacts);
+  // console.log(contacts.contacts);
+  const filter = useSelector(getStatusFilter);
+  console.log(filter);
   const visibleContacts = getVisibleContacts(contacts, filter);
-
+  // getVisibleContacts(contacts, filter)
   return (
       <List >  
         {visibleContacts.map(contact => (

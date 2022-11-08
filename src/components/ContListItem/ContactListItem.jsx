@@ -2,10 +2,9 @@
 import { Button, ListItem } from '../ContactList/ContactList.styled'
 import { BsTrash } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "redux/actions";
+import { deleteContact } from 'redux/contactsSlice';
 
 export const ContactListItem = ({ contact }) => {
-  
   const dispatch = useDispatch();
 
   const handleDelete = () => dispatch(deleteContact(contact.id));
