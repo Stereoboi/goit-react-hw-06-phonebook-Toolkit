@@ -19,7 +19,7 @@ const contactsInitialState = {
         reducer(state, action) {
           // console.log(state.userContacts);
           if (state.userContacts.some(el => el.name.toLowerCase() === action.payload.name.toLowerCase())) {
-          return alert("alarm")
+          return alert("this contact are alredy in your phonebook")
         }
           state.userContacts.push(action.payload)
         },

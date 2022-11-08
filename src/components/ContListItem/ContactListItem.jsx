@@ -1,4 +1,5 @@
 // import { useSelector } from "react-redux";
+import PropTypes from 'prop-types';
 import { Button, ListItem } from '../ContactList/ContactList.styled'
 import { BsTrash } from "react-icons/bs";
 import { useDispatch } from "react-redux";
@@ -20,6 +21,11 @@ export const ContactListItem = ({ contact }) => {
       </Button>
   </ListItem>
   )
+}
+
+
+ContactListItem.propTypes = {
+  contact: PropTypes.object,
 }
   
 
