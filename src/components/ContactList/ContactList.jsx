@@ -7,10 +7,10 @@ const getVisibleContacts = (contacts, filter) => {
   if (filter.status === "") {
     // console.log(contacts);
     // console.log(filter);
-    return contacts
+    return contacts.userContacts
   }
   if (filter.status !== "") {
-     return contacts.filter(contact =>
+     return contacts.userContacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.status.toLowerCase())
   );
   }
@@ -20,10 +20,10 @@ const getVisibleContacts = (contacts, filter) => {
 export const ContactList = () => {
 
   const contacts = useSelector(getContacts);
-  console.log(contacts);
+  // console.log(contacts.userContacts);
   // console.log(contacts.contacts);
   const filter = useSelector(getStatusFilter);
-  console.log(filter);
+  // console.log(filter);
   const visibleContacts = getVisibleContacts(contacts, filter);
   // getVisibleContacts(contacts, filter)
   return (
